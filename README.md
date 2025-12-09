@@ -9,12 +9,12 @@ To build this detector, you will need:
   * Ultrasonic Distance Sensor
   * 2 330 ohm resistors
   * 1 470 ohm resistor
-  * 1 Male-to-Male jumper cables
   * 11 Male-to-Female jumper cables
 
 The following image is a schematic for how you will wire your Raspberry Pi, Breadboard, and Unltrasonic Distance Sensor.
 
-<img width="1163" height="611" alt="Screenshot 2025-12-02 at 11 05 04 AM" src="https://github.com/user-attachments/assets/deb2992a-bee5-4b53-9861-b1ded700b9c6" />
+<img width="969" height="552" alt="Screenshot 2025-12-09 at 11 32 11 AM" src="https://github.com/user-attachments/assets/18547586-8521-4d65-8b15-3bd4891eda69" />
+
 
 **WARNING** You could permanently your pi, so please read carefully:
   * Make sure that your Pi is turned off when connecting cables to the GPIO ports.
@@ -35,9 +35,10 @@ Place one of your 330 ohm resitors in such a way that it lines up with the catho
 
 Next, you will connect the pushbutton to the Breadboard. Reference the follwoing image for how to connect your pushbutton.
 
-![IMG_6360](https://github.com/user-attachments/assets/b8482ddd-ed51-41c0-bd30-2c97df871d77)
+![IMG_6375](https://github.com/user-attachments/assets/b42ee700-fa8d-4c41-8d58-459067b5fcac)
 
-Using you Male-to-Male jumper cable, ground one side of the pushbutton. Then, with a Male-to-Female jumper cable connect the other side of the button to the Raspberry Pi. In the photo above, it is connected to GPIO 10.
+
+Using your Male-to-Female jumper cable, ground one side of the pushbutton. Then, with another Male-to-Female jumper cable connect the other side of the button to the Raspberry Pi. In the photo above, it is connected to GPIO 10.
 
 ## Step Three
 
@@ -75,3 +76,7 @@ while True:
             led.off()
             
 ```
+
+## Explanation of Result
+
+With this code, your distance sensor acts as the motion detector. When an object comes within 10 cm of the distance sensor, the light will illuminate. Then when you press the button, the script will reset and the lght will turn off until there is an object detected within that 10 cm parameter. 
