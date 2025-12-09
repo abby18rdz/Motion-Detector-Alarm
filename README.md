@@ -9,7 +9,7 @@ To build this detector, you will need:
   * Ultrasonic Distance Sensor
   * 2 330 ohm resistors
   * 1 470 ohm resistor
-  * 11 Male-to-Female jumper cables
+  * 12 Male-to-Female jumper cables
 
 The following image is a schematic for how you will wire your Raspberry Pi, Breadboard, and Unltrasonic Distance Sensor.
 
