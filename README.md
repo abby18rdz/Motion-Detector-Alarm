@@ -50,3 +50,28 @@ This is where you use the 470 ohm resistor and the last 330 ohm resistor. Ensure
 ## Step Four
 
 Now you will need to input this code to activate your Motion Detector Alarm.
+
+```python
+from gpiozero import DistanceSensor
+from time import sleep
+from gpiozero import LED, Button
+
+
+led = LED(17)
+button = Button(10)
+sensor = DistanceSensor(echo=24, trigger=23, max_distance=2.0)
+
+button.when_pressed = led.on
+button.when_released = led.off
+
+while True:
+        distance = sensor.distance * 100
+        print("Distance: %.2f" % distance)
+        sleep(0.5)
+        
+        if distance < 10:
+            led.on()
+            button.wait_for_press()
+            led.off()
+            
+```
